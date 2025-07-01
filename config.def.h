@@ -62,11 +62,19 @@ static const char *termcmd[]  = { "st", NULL };
 
 static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
 
+/* Volume controls */
+static const char *volup[] = { "mixer", "vol=+1%", NULL };
+static const char *voldown[] = { "mixer", "vol=-1%", NULL };
+static const char *volmute[] = { "mixer", "vol.mute=toggle", NULL };
+
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ 0,                       	XK_Print,  spawn,          {.v = screenshotcmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,	                XK_KP_Add, spawn,          {.v = volup } },
+	{ MODKEY,	                XK_KP_Subtract, spawn,     {.v = voldown } },
+	{ MODKEY,	                XK_KP_Multiply, spawn,     {.v = volmute } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
