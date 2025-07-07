@@ -18,6 +18,11 @@ static const char *colors[][3]      = {
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
 };
 
+static const char *const autostart[] = {
+	"dwmblocks", NULL,
+	NULL /* terminate */
+};
+
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
@@ -67,6 +72,8 @@ static const char *volup[] = { "mixer", "vol=+1%", NULL };
 static const char *voldown[] = { "mixer", "vol=-1%", NULL };
 static const char *volmute[] = { "mixer", "vol.mute=toggle", NULL };
 
+static const char *volupdate[] = { "pkill", "-76", "dwmblocks", NULL };
+
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
@@ -75,6 +82,9 @@ static const Key keys[] = {
 	{ MODKEY,	                XK_KP_Add, spawn,          {.v = volup } },
 	{ MODKEY,	                XK_KP_Subtract, spawn,     {.v = voldown } },
 	{ MODKEY,	                XK_KP_Multiply, spawn,     {.v = volmute } },
+	{ MODKEY,	                XK_KP_Add, spawn,          {.v = volupdate } },
+	{ MODKEY,	                XK_KP_Subtract, spawn,     {.v = volupdate } },
+	{ MODKEY,	                XK_KP_Multiply, spawn,     {.v = volupdate } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
