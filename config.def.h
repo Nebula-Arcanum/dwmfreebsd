@@ -75,6 +75,16 @@ static const char *volmute[] = { "mixer", "vol.mute=toggle", NULL };
 
 static const char *volupdate[] = { "pkill", "-76", "dwmblocks", NULL };
 
+static const char *browsercmd[] = { "firefox", NULL};
+static const char *obsidiancmd[] = { "obsidian", NULL };
+
+Autostarttag autostarttaglist[] = {
+	{.cmd = termcmd, .tags = 1 << 0 },
+	{.cmd = browsercmd, .tags = 1 << 1 },
+	{.cmd = obsidiancmd, .tags = 1 << 2 },
+	{.cmd = NULL, .tags = 0 },
+};
+
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
