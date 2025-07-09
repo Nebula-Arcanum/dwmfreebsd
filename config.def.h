@@ -5,6 +5,8 @@ static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static const int vertpad	    = 10; /* bar vertical padding */
+static const int sidepad	    = 10; /* bar horizontal padding */
 static const char *fonts[]          = { "3270NerdFontMono:size=21" };
 static const char dmenufont[]       = "3270NerdFontMono:size=21";
 static const char col_gray1[]       = "#222222";
