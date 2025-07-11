@@ -38,12 +38,12 @@ static const char *const autostart[] = {
 /* tagging: refer to https://github.com/bakkeby/patches/wiki/tagicons */
 static const char *tags[NUMTAGS] = { NULL };  /* left for compatibility reasons, i.e. code that checks LENGTH(tags) */
 static char *tagicons[][NUMTAGS*2] = {
-	[IconsDefault]        = { "1", "2", "3", "4", "5", "6", "7", "8",
-				"9", "A", "B", "C", "D", "E", "F", "G", "H", "I" },
+	[IconsDefault]        = { "󰞷", "󰖟", "󰯃", "4", "5", "6", "7", "8", "9", /* Primary monitor */
+				  "A", "B", "C", "D", "E", "F", "G", "H", "I" }, /* Secondary monitor */
 	[IconsVacant]         = { NULL },
 	[IconsOccupied]       = { NULL },
 };
-static const int taglayouts[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+static const int taglayouts[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0 }; /* Primary monitor */
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -98,7 +98,7 @@ static const char *volmute[] = { "mixer", "vol.mute=toggle", NULL };
 static const char *volupdate[] = { "pkill", "-76", "dwmblocks", NULL };
 
 static const char *browsercmd[] = { "firefox", NULL};
-static const char *obsidiancmd[] = { "obsidian", NULL };
+static const char *obsidiancmd[] = { "linux-obsidian", NULL };
 
 Autostarttag autostarttaglist[] = {
 	{.cmd = termcmd, .tags = 1 << 0 },
