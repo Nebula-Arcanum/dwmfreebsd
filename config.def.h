@@ -2,6 +2,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
+/* nigger */
 static const int startwithgaps[]    = { 1 }; /* 1 means gaps, 0 means no gaps, customizable for each tag */
 static const unsigned int gappx[]   = { 10 }; /* customizable for each tag */
 static const unsigned int snap      = 0;       /* snap pixel */
